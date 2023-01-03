@@ -37,19 +37,20 @@ fun RecipeExecutor.mviActivityRecipe(
     generateManifest(
         moduleData = moduleData,
         activityClass = "${activityClass}Activity",
-        packageName = "${packageName}.${
-            PathConst.getManifestSet(
-                packageName, srcOut.resolve(
-                    "${
-                        PathConst.transferPagePackage(
-                            layoutName.replace(
-                                "activity_", ""
-                            )
-                        )
-                    }"
-                ).absolutePath
-            )
-        }",
+        packageName = "${packageName}",
+//        packageName = "${packageName}.${
+//            PathConst.getManifestSet(
+//                packageName, srcOut.resolve(
+//                    "${
+//                        PathConst.transferPagePackage(
+//                            layoutName.replace(
+//                                "activity_", ""
+//                            )
+//                        )
+//                    }"
+//                ).absolutePath
+//            )
+//        }",
         isLauncher = false,
         hasNoActionBar = false,
         generateActivityTitle = false,

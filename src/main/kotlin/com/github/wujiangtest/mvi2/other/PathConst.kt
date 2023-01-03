@@ -26,9 +26,8 @@ object PathConst {
      * 转化manifest路径
      */
     fun getManifestSet(packageName: String, filePath: String): String {
-        var path = filePath.replace("\\", ".")
-//        return path.replace(packageName,"_").split("_")[1]
-//        path = path.substring(path.indexOf(packageName))
+        var path = filePath.replace("\\", ".").plus("packageName-->$packageName")
+//        val data = path.replace(packageName, " ").split(" ")
         return path
     }
 }
