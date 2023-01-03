@@ -1,5 +1,4 @@
 package com.github.wujiangtest.mvi2.other.activity
-
 import  com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
 import com.android.tools.idea.wizard.template.impl.activities.common.generateManifest
@@ -7,7 +6,6 @@ import com.github.wujiangtest.mvi2.other.PathConst
 import com.github.wujiangtest.mvi2.other.activity.res.layout.mviActivityXml
 import com.github.wujiangtest.mvi2.other.activity.src.app_package.mviActivityKt
 import com.github.wujiangtest.mvi2.other.activity.src.app_package.mviActivityViewModel
-
 
 fun RecipeExecutor.mviActivityRecipe(
     moduleData: ModuleTemplateData,
@@ -37,7 +35,12 @@ fun RecipeExecutor.mviActivityRecipe(
     generateManifest(
         moduleData = moduleData,
         activityClass = "${activityClass}Activity",
-        packageName = "${packageName}",
+        packageName = "${packageName}.ui.activity.${PathConst.transferPagePackage(
+            layoutName.replace(
+                "activity_", ""
+            )
+        )
+        }",
 //        packageName = "${packageName}.${
 //            PathConst.getManifestSet(
 //                packageName, srcOut.resolve(

@@ -23,7 +23,7 @@ val mviFragmentTemplate
         }
 
         val contentDescribe = stringParameter {
-            name = "页面描述"
+            name = "Page Description"
             default = ""
             help = "请描述页面相关功能"
             constraints = listOf(Constraint.NONEMPTY)
