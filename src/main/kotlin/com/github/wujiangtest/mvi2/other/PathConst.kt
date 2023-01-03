@@ -1,6 +1,7 @@
 package com.github.wujiangtest.mvi2.other
 
 import org.gradle.internal.impldep.com.google.common.base.CaseFormat
+import java.io.File
 
 object PathConst {
     val BaseVmActivityPath = "com.hideout.wallet.mvi.base.BaseVmActivity"
@@ -19,5 +20,14 @@ object PathConst {
      */
     fun transferPagePackage2(layoutName: String): String {
         return CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, layoutName)
+    }
+
+    /**
+     * 转化manifest路径
+     */
+    fun getManifestSet(packageName: String, filePath: String): String {
+        var path = filePath.replace("\\", ".")
+        path = path.substring(path.indexOf(packageName) + packageName.length + 1)
+        return path
     }
 }

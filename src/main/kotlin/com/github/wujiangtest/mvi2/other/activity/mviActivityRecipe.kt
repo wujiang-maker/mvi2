@@ -18,16 +18,45 @@ fun RecipeExecutor.mviActivityRecipe(
 ) {
     val (projectData, srcOut, resOut) = moduleData
     val ktOrJavaExt = projectData.language.extension
+//    generateManifest(
+//        moduleData = moduleData,
+//        activityClass = "${activityClass}Activity",
+//        packageName = "${packageName}.${
+//            PathConst.transferPagePackage(
+//                layoutName.replace(
+//                    "activity_", ""
+//                )
+//            )
+//        }",
+//        isLauncher = false,
+//        hasNoActionBar = false,
+//        generateActivityTitle = false,
+//    )
+
+
     generateManifest(
         moduleData = moduleData,
         activityClass = "${activityClass}Activity",
-        packageName = "${packageName}.${layoutName.replace("activity_", "")}",
+        packageName = "${packageName}.${
+            PathConst.getManifestSet(
+                packageName, srcOut.resolve(
+                    "${
+                        PathConst.transferPagePackage(
+                            layoutName.replace(
+                                "activity_", ""
+                            )
+                        )
+                    }"
+                ).absolutePath
+            )
+        }",
         isLauncher = false,
         hasNoActionBar = false,
         generateActivityTitle = false,
 //            requireTheme = false,
 //            useMaterial2 = false
     )
+
 
     val mviActivity = mviActivityKt(
         projectData.applicationPackage, activityClass, contentDescribe, layoutName, packageName
