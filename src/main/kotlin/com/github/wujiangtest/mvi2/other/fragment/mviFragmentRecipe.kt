@@ -22,8 +22,6 @@ fun RecipeExecutor.mviFragmentRecipe(
     // 保存Activity
     save(
         mvvmFragment,
-
-
         srcOut.resolve(
             "${
                 PathConst.transferPagePackage(

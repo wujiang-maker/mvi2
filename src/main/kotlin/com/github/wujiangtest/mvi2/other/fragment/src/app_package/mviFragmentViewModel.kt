@@ -9,7 +9,11 @@ fun mviViewModel(
     fragmentClass:String,
     layoutName:String,
 )="""
-package ${packageName}.${layoutName.replace("fragment_","")}
+package ${packageName}.${ PathConst.transferPagePackage(
+    layoutName.replace(
+        "fragment_", ""
+    )
+)}
 import android.app.Application
 import ${PathConst.BaseViewModelPath}
 

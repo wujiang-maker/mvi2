@@ -11,7 +11,11 @@ fun mviActivityKt(
     layoutName: String,
     packageName: String
 ) = """
-package ${packageName}.${layoutName.replace("activity_", "")}
+package ${packageName}.${ PathConst.transferPagePackage(
+    layoutName.replace(
+        "activity_", ""
+    )
+)}
 import ${PathConst.BaseVmActivityPath}
 import ${applicationPackage}.R
 import android.os.Bundle

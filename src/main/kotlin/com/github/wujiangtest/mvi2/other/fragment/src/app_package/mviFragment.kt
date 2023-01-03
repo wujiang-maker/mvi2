@@ -11,7 +11,11 @@ fun mviFragmentKt(
     layoutName:String,
     packageName:String
 )="""
-package ${packageName}.${layoutName.replace("fragment_","")}
+package ${packageName}.${ PathConst.transferPagePackage(
+    layoutName.replace(
+        "fragment_", ""
+    )
+)}
 import ${PathConst.BaseVmFragmentPath}
 import  ${applicationPackage}.R
 import android.os.Bundle

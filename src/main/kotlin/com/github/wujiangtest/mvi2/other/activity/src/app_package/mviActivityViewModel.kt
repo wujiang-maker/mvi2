@@ -8,7 +8,10 @@ fun mviActivityViewModel(
     activityClass: String,
     layoutName:String,
 ) = """
-package ${packageName}.${layoutName.replace("activity_","")}
+package ${packageName}.${PathConst.transferPagePackage(
+    layoutName.replace(
+        "activity_", ""
+    ))}
 import android.app.Application
 import ${PathConst.BaseViewModelPath}
 
