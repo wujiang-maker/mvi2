@@ -6,7 +6,7 @@ import com.github.wujiangtest.mvi2.other.PathConst
 
 val mviActivityTemplate
     get() = template {
-        name = "MVI Activity"
+        name = "Mvi Activity"
         description = "适用于Mvi框架的Activity"
         minApi = MIN_API
         category = Category.Other

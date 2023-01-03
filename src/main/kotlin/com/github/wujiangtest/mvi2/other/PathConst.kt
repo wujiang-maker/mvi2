@@ -27,7 +27,8 @@ object PathConst {
      */
     fun getManifestSet(packageName: String, filePath: String): String {
         var path = filePath.replace("\\", ".")
-        path = path.substring(path.indexOf(packageName) + packageName.length + 1)
+//        return path.replace(packageName,"_").split("_")[1]
+//        path = path.substring(path.indexOf(packageName))
         return path
     }
 }
