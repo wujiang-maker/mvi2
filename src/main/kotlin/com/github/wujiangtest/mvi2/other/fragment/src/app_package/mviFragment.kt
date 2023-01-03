@@ -1,12 +1,13 @@
-package other.fragment.src.app_package
+package com.github.wujiangtest.mvi2.other.fragment.src.app_package
 
-import other.PathConst
+import com.github.wujiangtest.mvi2.other.PathConst
 import java.text.SimpleDateFormat
 import java.util.*
 
 fun mviFragmentKt(
     applicationPackage:String?,
     fragmentClass:String,
+    contentDescribe:String,
     layoutName:String,
     packageName:String
 )="""
@@ -19,8 +20,8 @@ import ${packageName}.${layoutName.replace("fragment_","")}.${fragmentClass}View
 
 
 /**
- *@description $fragmentClass
- *@author 吴江
+ *@description $contentDescribe
+ *@author 吴江 619944652@qq.com
  *@data ${SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(Date())}
  */
 class ${fragmentClass}Fragment:BaseVmFragment<${fragmentClass}ViewModel,Fragment${fragmentClass}Binding>(R.layout.${layoutName}) {
@@ -29,7 +30,7 @@ class ${fragmentClass}Fragment:BaseVmFragment<${fragmentClass}ViewModel,Fragment
      * 初始化view
      */
     override fun initWidget(savedInstanceState: Bundle?) {
-        mViewBinding.vm = mViewModal
+        mDataBinding.vm = mViewModel
         
     }
 

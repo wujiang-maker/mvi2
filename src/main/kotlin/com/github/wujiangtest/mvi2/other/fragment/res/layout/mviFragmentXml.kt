@@ -1,4 +1,4 @@
-package other.fragment.res.layout
+package com.github.wujiangtest.mvi2.other.fragment.res.layout
 
 fun mviFragmentXml(
     packageName: String,

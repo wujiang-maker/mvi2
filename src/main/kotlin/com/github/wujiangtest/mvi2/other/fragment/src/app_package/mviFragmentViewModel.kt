@@ -1,6 +1,6 @@
-package other.fragment.src.app_package
+package com.github.wujiangtest.mvi2.other.fragment.src.app_package
 
-import other.PathConst
+import com.github.wujiangtest.mvi2.other.PathConst
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -23,7 +23,7 @@ class ${fragmentClass}ViewModel(application: Application):BaseViewModel(applicat
     /**
      *意图事件分发
      */
-    fun dispatchAction(action: ${fragmentClass}Activity.${fragmentClass}Action) {
+    fun dispatchAction(action: ${fragmentClass}Fragment.${fragmentClass}Action) {
     
     }
 

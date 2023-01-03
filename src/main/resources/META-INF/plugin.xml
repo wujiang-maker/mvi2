@@ -5,6 +5,8 @@
     <vendor>wujiangtest</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.wujiangtest.mvi2.services.MyApplicationService"/>
@@ -16,6 +18,6 @@
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
     <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
-        <wizardTemplateProvider implementation="other.SamplePluginTemplateProviderImpl" />
+        <wizardTemplateProvider implementation="com.github.wujiangtest.mvi2.other.SamplePluginTemplateProviderImpl" />
     </extensions>
 </idea-plugin>

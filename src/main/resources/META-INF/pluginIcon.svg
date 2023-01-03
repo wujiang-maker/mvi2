@@ -1,11 +1,19 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M32.0845 7.94025V4H24.0203V7.9896H16.029V4H7.91553V7.94025H4V36H16.0044V32.0045C16.0058 30.9457 16.4274 29.9308 17.1766 29.1826C17.9258 28.4345 18.9412 28.0143 20 28.0143C21.0588 28.0143 22.0743 28.4345 22.8234 29.1826C23.5726 29.9308 23.9942 30.9457 23.9956 32.0045V36H36V7.94025H32.0845Z"
-          fill="url(#paint0_linear)"/>
-    <defs>
-        <linearGradient id="paint0_linear" x1="2.94192" y1="4.89955" x2="37.7772" y2="39.7345" gradientUnits="userSpaceOnUse">
-            <stop offset="0.15937" stop-color="#3BEA62"/>
-            <stop offset="0.5404" stop-color="#3C99CC"/>
-            <stop offset="0.93739" stop-color="#6B57FF"/>
-        </linearGradient>
-    </defs>
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg t="1672280811874" class="icon" viewBox="0 0 1024 1024" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" p-id="5791" xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="200" height="200">
+    <path
+        d="M896 96a32 32 0 0 1 32 32v640a32 32 0 0 1-32 32H128a32 32 0 0 1-32-32V128a32 32 0 0 1 32-32h768z m0 32H128v640h768V128z"
+        fill="#5D6D7E" p-id="5792"></path>
+    <path d="M128 128h768v768H128z" fill="#FFFFFF" p-id="5793"></path>
+    <path
+        d="M448 480a32 32 0 0 1 32 32v160a32 32 0 0 1-32 32h-45.184l-26.144-32H448v-160H256v95.552H224V512a32 32 0 0 1 32-32h192z m0-288a32 32 0 0 1 32 32v160a32 32 0 0 1-32 32H256a32 32 0 0 1-32-32V224a32 32 0 0 1 32-32h192z m0 32H256v160h192V224z"
+        fill="#30AD98" p-id="5794"></path>
+    <path
+        d="M307.968 640L384 736h256l78.528-96H896a32 32 0 0 1 32 32v192a64 64 0 0 1-64 64H160a64 64 0 0 1-64-64v-192a32 32 0 0 1 32-32h179.968z m425.728 32l-78.528 96h-286.656l-76-96H128v192a32 32 0 0 0 28.256 31.776L160 896h704a32 32 0 0 0 31.776-28.256L896 864v-192h-162.304z"
+        fill="#5D6D7E" p-id="5795"></path>
+    <path
+        d="M688 192a16 16 0 0 1 15.744 13.12L704 208V288h80a16 16 0 0 1 2.88 31.744L784 320H704v80a16 16 0 0 1-31.744 2.88L672 400V320h-80a16 16 0 0 1-2.88-31.744L592 288H672V208a16 16 0 0 1 16-16z"
+        fill="#C49F74" p-id="5796"></path>
 </svg>

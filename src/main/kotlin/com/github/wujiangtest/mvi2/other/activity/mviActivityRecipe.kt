@@ -1,15 +1,20 @@
-package other.activity
+package com.github.wujiangtest.mvi2.other.activity
 
 import  com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
 import com.android.tools.idea.wizard.template.impl.activities.common.generateManifest
-import other.activity.res.layout.mviActivityXml
-import other.activity.src.app_package.mviActivityKt
-import other.activity.src.app_package.mviActivityViewModel
+import com.github.wujiangtest.mvi2.other.PathConst
+import com.github.wujiangtest.mvi2.other.activity.res.layout.mviActivityXml
+import com.github.wujiangtest.mvi2.other.activity.src.app_package.mviActivityKt
+import com.github.wujiangtest.mvi2.other.activity.src.app_package.mviActivityViewModel
 
 
 fun RecipeExecutor.mviActivityRecipe(
-    moduleData: ModuleTemplateData, activityClass: String, layoutName: String, packageName: String
+    moduleData: ModuleTemplateData,
+    activityClass: String,
+    contentDescribe: String,
+    layoutName: String,
+    packageName: String
 ) {
     val (projectData, srcOut, resOut) = moduleData
     val ktOrJavaExt = projectData.language.extension
@@ -19,21 +24,22 @@ fun RecipeExecutor.mviActivityRecipe(
         packageName = "${packageName}.${layoutName.replace("activity_", "")}",
         isLauncher = false,
         hasNoActionBar = false,
-        generateActivityTitle = true,
+        generateActivityTitle = false,
 //            requireTheme = false,
 //            useMaterial2 = false
     )
 
-    val mviActivity =
-        mviActivityKt(projectData.applicationPackage, activityClass, layoutName, packageName)
+    val mviActivity = mviActivityKt(
+        projectData.applicationPackage, activityClass, contentDescribe, layoutName, packageName
+    )
     // 保存Activity
     save(
-        mviActivity,
-        srcOut.resolve(
+        mviActivity, srcOut.resolve(
             "${
-                layoutName.replace(
-                    "activity_",
-                    ""
+                PathConst.transferPagePackage(
+                    layoutName.replace(
+                        "activity_", ""
+                    )
                 )
             }/${activityClass}Activity.${ktOrJavaExt}"
         )
@@ -46,12 +52,12 @@ fun RecipeExecutor.mviActivityRecipe(
     )
     // 保存viewmodel
     save(
-        mviActivityViewModel(packageName, activityClass, layoutName),
-        srcOut.resolve(
+        mviActivityViewModel(packageName, activityClass, layoutName), srcOut.resolve(
             "${
-                layoutName.replace(
-                    "activity_",
-                    ""
+                PathConst.transferPagePackage(
+                    layoutName.replace(
+                        "activity_", ""
+                    )
                 )
             }/${activityClass}ViewModel.${ktOrJavaExt}"
         )

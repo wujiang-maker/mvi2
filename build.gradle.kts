@@ -7,7 +7,8 @@ plugins {
     // Kotlin support
     id("org.jetbrains.kotlin.jvm") version "1.7.21"
     // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.10.0"
+//    id("org.jetbrains.intellij") version "1.10.0"
+    id("org.jetbrains.intellij") version "1.11.0"
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "2.0.0"
     // Gradle Qodana Plugin
@@ -53,13 +54,16 @@ kover.xmlReport {
     onCheck.set(true)
 }
 
+
+val myPluginVerison ="0.0.1"
 tasks {
     wrapper {
         gradleVersion = properties("gradleVersion")
     }
 
     patchPluginXml {
-        version.set(properties("pluginVersion"))
+//        version.set(properties("pluginVersion"))
+        version.set(myPluginVerison)
         sinceBuild.set(properties("pluginSinceBuild"))
         untilBuild.set(properties("pluginUntilBuild"))
 
@@ -77,14 +81,21 @@ tasks {
         )
 
         // Get the latest available change notes from the changelog file
-        changeNotes.set(provider {
-            with(changelog) {
-                renderItem(
-                    getOrNull(properties("pluginVersion")) ?: getLatest(),
-                    Changelog.OutputType.HTML,
-                )
-            }
-        })
+
+//        changeNotes.set(provider {
+//            changelog.run {
+//                getOrNull(properties("pluginVersion")) ?: getLatest()
+//            }.toHTML()
+//        })
+
+//        changeNotes.set(provider {
+//            with(changelog) {
+//                renderItem(
+//                    getOrNull(properties("pluginVersion")) ?: getLatest(),
+//                    Changelog.OutputType.HTML,
+//                )
+//            }
+//        })
     }
     runIdeForUiTests {
         systemProperty("robot-server.port", "8082")
@@ -108,6 +119,7 @@ tasks {
 
 changelog {
     version.set(properties("pluginVersion"))
+//    version.set(myPluginVerison)
     path.set(file("CHANGELOG.md").canonicalPath)
     header.set(provider { "[${version.get()}] - ${org.jetbrains.changelog.date()}" })
     headerParserRegex.set("""(\d+\.\d+)""".toRegex())

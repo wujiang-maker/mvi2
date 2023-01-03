@@ -1,4 +1,4 @@
-package other.activity.res.layout
+package com.github.wujiangtest.mvi2.other.activity.res.layout
 
 fun mviActivityXml(
     packageName: String,

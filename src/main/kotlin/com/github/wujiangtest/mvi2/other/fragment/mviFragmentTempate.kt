@@ -1,4 +1,4 @@
-package other.fragment
+package com.github.wujiangtest.mvi2.other.fragment
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
@@ -22,6 +22,13 @@ val mviFragmentTemplate
             constraints = listOf(Constraint.NONEMPTY)
         }
 
+        val contentDescribe = stringParameter {
+            name = "页面描述"
+            default = ""
+            help = "请描述页面相关功能"
+            constraints = listOf(Constraint.NONEMPTY)
+        }
+
         layoutName = stringParameter {
             name = "Layout Name"
             default = "fragment_main"
@@ -34,6 +41,7 @@ val mviFragmentTemplate
 
         widgets(
             TextFieldWidget(fragmentClass),
+            TextFieldWidget(contentDescribe),
             TextFieldWidget(layoutName),
             PackageNameWidget(packageName)
         )
@@ -42,6 +50,7 @@ val mviFragmentTemplate
             mviFragmentRecipe(
                 data as ModuleTemplateData,
                 fragmentClass.value,
+                contentDescribe.value,
                 layoutName.value,
                 packageName.value)
         }

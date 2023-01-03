@@ -1,6 +1,6 @@
-package other.activity.src.app_package
+package com.github.wujiangtest.mvi2.other.activity.src.app_package
 
-import other.PathConst
+import com.github.wujiangtest.mvi2.other.PathConst
 import java.text.SimpleDateFormat
 import java.util.*
 fun mviActivityViewModel(
