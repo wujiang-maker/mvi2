@@ -1,4 +1,5 @@
 package com.github.wujiangtest.mvi2.other.activity
+
 import  com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
 import com.android.tools.idea.wizard.template.impl.activities.common.generateManifest
@@ -16,49 +17,19 @@ fun RecipeExecutor.mviActivityRecipe(
 ) {
     val (projectData, srcOut, resOut) = moduleData
     val ktOrJavaExt = projectData.language.extension
-//    generateManifest(
-//        moduleData = moduleData,
-//        activityClass = "${activityClass}Activity",
-//        packageName = "${packageName}.${
-//            PathConst.transferPagePackage(
-//                layoutName.replace(
-//                    "activity_", ""
-//                )
-//            )
-//        }",
-//        isLauncher = false,
-//        hasNoActionBar = false,
-//        generateActivityTitle = false,
-//    )
-
-
     generateManifest(
         moduleData = moduleData,
         activityClass = "${activityClass}Activity",
-        packageName = "${packageName}.ui.activity.${PathConst.transferPagePackage(
-            layoutName.replace(
-                "activity_", ""
+        packageName = "${packageName}.ui.activity.${
+            PathConst.transferPagePackage(
+                layoutName.replace(
+                    "activity_", ""
+                )
             )
-        )
         }",
-//        packageName = "${packageName}.${
-//            PathConst.getManifestSet(
-//                packageName, srcOut.resolve(
-//                    "${
-//                        PathConst.transferPagePackage(
-//                            layoutName.replace(
-//                                "activity_", ""
-//                            )
-//                        )
-//                    }"
-//                ).absolutePath
-//            )
-//        }",
         isLauncher = false,
         hasNoActionBar = false,
-        generateActivityTitle = false,
-//            requireTheme = false,
-//            useMaterial2 = false
+        generateActivityTitle = false
     )
 
 

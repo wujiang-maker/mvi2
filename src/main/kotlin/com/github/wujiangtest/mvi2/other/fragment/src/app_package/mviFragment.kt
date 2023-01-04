@@ -25,7 +25,7 @@ import ${packageName}.${layoutName.replace("fragment_","")}.${fragmentClass}View
 
 /**
  *@description $contentDescribe
- *@author 吴江 619944652@qq.com
+ *@author 张明海 
  *@data ${SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(Date())}
  */
 class ${fragmentClass}Fragment:BaseVmFragment<${fragmentClass}ViewModel,Fragment${fragmentClass}Binding>(R.layout.${layoutName}) {

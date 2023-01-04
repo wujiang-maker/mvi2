@@ -2,7 +2,6 @@ package com.github.wujiangtest.mvi2.other.activity
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
-import com.github.wujiangtest.mvi2.other.PathConst
 
 val mviActivityTemplate
     get() = template {
@@ -52,7 +51,11 @@ val mviActivityTemplate
         )
         recipe = { data: TemplateData ->
             mviActivityRecipe(
-                data as ModuleTemplateData, activityClass.value,contentDescribe.value, layoutName.value, packageName.value
+                data as ModuleTemplateData,
+                activityClass.value,
+                contentDescribe.value,
+                layoutName.value,
+                packageName.value
             )
         }
     }
