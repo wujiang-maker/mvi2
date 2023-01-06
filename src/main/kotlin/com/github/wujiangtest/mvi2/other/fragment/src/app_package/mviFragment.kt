@@ -20,12 +20,11 @@ import ${PathConst.BaseVmFragmentPath}
 import  ${applicationPackage}.R
 import android.os.Bundle
 import  ${applicationPackage}.databinding.Fragment${fragmentClass}Binding
-import ${packageName}.${layoutName.replace("fragment_","")}.${fragmentClass}ViewModel
 
 
 /**
  *@description $contentDescribe
- *@author 张明海 
+ *@author 吴江 
  *@data ${SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(Date())}
  */
 class ${fragmentClass}Fragment:BaseVmFragment<${fragmentClass}ViewModel,Fragment${fragmentClass}Binding>(R.layout.${layoutName}) {

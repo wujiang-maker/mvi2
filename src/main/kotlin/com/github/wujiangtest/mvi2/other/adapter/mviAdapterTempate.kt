@@ -1,12 +1,12 @@
-package com.github.wujiangtest.mvi2.other.activity
+package com.github.wujiangtest.mvi2.other.adapter
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
 
-val mviActivityTemplate
+val mviAdapterTemplate
     get() = template {
-        name = "Mvi Activity"
-        description = "适用于Mvi框架的Activity"
+        name = "DataBinding Adapter"
+        description = "适用于Mvi框架的Adapter"
         minApi = MIN_API
         category = Category.Other
         formFactor = FormFactor.Mobile
@@ -17,42 +17,57 @@ val mviActivityTemplate
             WizardUiContext.NewProject,
             WizardUiContext.NewModule
         )
-
         lateinit var layoutName: StringParameter
-
-
-        val activityClass = stringParameter {
-            name = "Activity Name"
-            default = "Main"
-            help = "只输入名字，不要包含Activity"
+        val adapterClass = stringParameter {
+            name = "AdapterItem Name"
+            default = "Item"
+            help = "请输入Adapter名称"
             constraints = listOf(Constraint.NONEMPTY)
         }
-        val contentDescribe = stringParameter {
+        val adapterDescribe = stringParameter {
             name = "Page Description"
             default = ""
-            help = "请描述页面相关功能"
+            help = "请描述Adapter相关功能"
+            constraints = listOf(Constraint.NONEMPTY)
+        }
+
+        val entityClass = stringParameter {
+            name = "Entity Name"
+            default = "Entity"
+            help = "请输入Entity名称"
+            constraints = listOf(Constraint.NONEMPTY)
+            suggest={"${adapterClass.value}"}
+        }
+        val entityDescribe = stringParameter {
+            name = "Page Description"
+            default = ""
+            help = "请描述Adapter相关功能"
             constraints = listOf(Constraint.NONEMPTY)
         }
 
         layoutName = stringParameter {
             name = "Layout Name"
-            default = "activity_main"
-            help = "请输入布局的名字"
+            default = "item_"
+            help = "请输入item布局的名字"
             constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
-            suggest = { "${activityToLayout(activityClass.value)}" }
+            suggest = { "${activityToLayout(adapterClass.value).replace("activity","item")}" }
         }
         val packageName = defaultPackageNameParameter
         widgets(
-            TextFieldWidget(activityClass),
-            TextFieldWidget(contentDescribe),
+            TextFieldWidget(adapterClass),
+            TextFieldWidget(adapterDescribe),
+            TextFieldWidget(entityClass),
+            TextFieldWidget(entityDescribe),
             TextFieldWidget(layoutName),
             PackageNameWidget(packageName)
         )
         recipe = { data: TemplateData ->
-            mviActivityRecipe(
+            mviAdapterRecipe(
                 data as ModuleTemplateData,
-                activityClass.value,
-                contentDescribe.value,
+                adapterClass.value,
+                adapterDescribe.value,
+                entityClass.value,
+                entityDescribe.value,
                 layoutName.value,
                 packageName.value
             )

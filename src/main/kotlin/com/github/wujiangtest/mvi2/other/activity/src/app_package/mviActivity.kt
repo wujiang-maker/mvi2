@@ -24,7 +24,7 @@ import ${applicationPackage}.databinding.Activity${activityClass}Binding
 
 /**
  *@description $contentDescribe
- *@author 张明海
+ *@author 吴江
  *@data ${SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(Date())}
  */
  
