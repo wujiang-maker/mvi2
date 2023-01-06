@@ -1,10 +1,12 @@
 package com.github.wujiangtest.mvi2.other.adapter.src.app_package
+
 import java.text.SimpleDateFormat
 import java.util.*
 
 fun mviAdapterKt(
     applicationPackage: String?,
     activityClass: String,
+    entityClass: String,
     contentDescribe: String,
     layoutName: String,
     packageName: String
@@ -22,9 +24,8 @@ import ${applicationPackage}.databinding.Item${activityClass}Binding
  *@author 吴江
  *@data ${SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(Date())}
  */
-class ${activityClass}Adapter:BaseQuickAdapter<UserInfo,BaseDataBindingHolder<ItemUserInfoBinding>>(R.layout.${layoutName}) {
-    override fun convert(holder: BaseDataBindingHolder<ItemUserInfoBinding>, item: UserInfo) {
-
+class ${activityClass}Adapter:BaseQuickAdapter<${entityClass},BaseDataBindingHolder<Item${activityClass}Binding>>(R.layout.${layoutName}) {
+    override fun convert(holder: BaseDataBindingHolder<Item${activityClass}Binding>, item: ${entityClass}) {
         holder.dataBinding?.item = item
     }
 }

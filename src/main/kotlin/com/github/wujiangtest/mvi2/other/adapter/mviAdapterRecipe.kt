@@ -18,7 +18,7 @@ fun RecipeExecutor.mviAdapterRecipe(
     val (projectData, srcOut, resOut) = moduleData
     val ktOrJavaExt = projectData.language.extension
     val mviAdapter = mviAdapterKt(
-        projectData.applicationPackage, activityClass, contentDescribe, layoutName, packageName
+        projectData.applicationPackage, activityClass,entityClass, contentDescribe, layoutName, packageName
     )
 
     val mviEntity = mviAdapterItemKt(
