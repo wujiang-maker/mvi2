@@ -17,7 +17,7 @@ import ${PathConst.BaseViewModelPath}
 
 /**
  *@description $activityClass
- *@author 吴江
+ *@author ${PathConst.PluginUserName}
  *@data ${SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(Date())}
  */
 class ${activityClass}ViewModel(application: Application):BaseViewModel(application){

@@ -19,7 +19,7 @@ import ${PathConst.BaseViewModelPath}
 
 /**
  *@description $fragmentClass
- *@author 吴江
+ *@author ${PathConst.PluginUserName}
  *@data ${SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(Date())}
  */
 class ${fragmentClass}ViewModel(application: Application):BaseViewModel(application){

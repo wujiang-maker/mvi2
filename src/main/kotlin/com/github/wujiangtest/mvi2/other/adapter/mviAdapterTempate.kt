@@ -5,7 +5,7 @@ import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
 
 val mviAdapterTemplate
     get() = template {
-        name = "DataBinding Adapter"
+        name = "Mvi Adapter"
         description = "适用于Mvi框架的Adapter"
         minApi = MIN_API
         category = Category.Other
@@ -25,7 +25,7 @@ val mviAdapterTemplate
             constraints = listOf(Constraint.NONEMPTY)
         }
         val adapterDescribe = stringParameter {
-            name = "Page Description"
+            name = "Adapter Description"
             default = ""
             help = "请描述Adapter相关功能"
             constraints = listOf(Constraint.NONEMPTY)
@@ -36,12 +36,12 @@ val mviAdapterTemplate
             default = "Entity"
             help = "请输入Entity名称"
             constraints = listOf(Constraint.NONEMPTY)
-            suggest={"${adapterClass.value}"}
+            suggest = { "${adapterClass.value}" }
         }
         val entityDescribe = stringParameter {
-            name = "Page Description"
+            name = "Entity Description"
             default = ""
-            help = "请描述Adapter相关功能"
+            help = "请描述Entity相关功能"
             constraints = listOf(Constraint.NONEMPTY)
         }
 
@@ -50,7 +50,7 @@ val mviAdapterTemplate
             default = "item_"
             help = "请输入item布局的名字"
             constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
-            suggest = { "${activityToLayout(adapterClass.value).replace("activity","item")}" }
+            suggest = { "${activityToLayout(adapterClass.value).replace("activity", "item")}" }
         }
         val packageName = defaultPackageNameParameter
         widgets(

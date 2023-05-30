@@ -9,61 +9,62 @@ import com.github.wujiangtest.mvi2.other.activity.src.app_package.mviActivityKt
 import com.github.wujiangtest.mvi2.other.activity.src.app_package.mviActivityViewModel
 
 fun RecipeExecutor.mviActivityRecipe(
-    moduleData: ModuleTemplateData,
-    activityClass: String,
-    contentDescribe: String,
-    layoutName: String,
-    packageName: String
+        moduleData: ModuleTemplateData,
+        activityClass: String,
+        contentDescribe: String,
+        layoutName: String,
+        packageName: String
 ) {
     val (projectData, srcOut, resOut) = moduleData
     val ktOrJavaExt = projectData.language.extension
     generateManifest(
-        moduleData = moduleData,
-        activityClass = "${activityClass}Activity",
-        packageName = "${packageName}.ui.activity.${
-            PathConst.transferPagePackage(
-                layoutName.replace(
-                    "activity_", ""
-                )
-            )
-        }",
-        isLauncher = false,
-        hasNoActionBar = false,
-        generateActivityTitle = false
+            moduleData = moduleData,
+            activityClass = "${activityClass}Activity",
+            packageName = "${packageName}.${
+                activityClass.decapitalize()
+            }",
+//            packageName = "${packageName}.ui.activity.${
+//                activityClass.decapitalize()
+//            }",
+            isLauncher = false,
+            hasNoActionBar = false,
+            generateActivityTitle = false
     )
 
 
     val mviActivity = mviActivityKt(
-        projectData.applicationPackage, activityClass, contentDescribe, layoutName, packageName
+            projectData.applicationPackage, activityClass, contentDescribe, layoutName, packageName
     )
     // 保存Activity
     save(
-        mviActivity, srcOut.resolve(
+            mviActivity, srcOut.resolve(
             "${
-                PathConst.transferPagePackage(
-                    layoutName.replace(
-                        "activity_", ""
-                    )
-                )
+                activityClass.decapitalize()
+//                PathConst.transferPagePackage(
+//                    layoutName.replace(
+//                        "activity_", ""
+//                    )
+//                )
             }/${activityClass}Activity.${ktOrJavaExt}"
-        )
+    )
     )
 
     // 保存xml
     save(
-        mviActivityXml(packageName, activityClass, layoutName),
-        resOut.resolve("layout/${layoutName}.xml")
+            mviActivityXml(packageName, activityClass, layoutName),
+            resOut.resolve("layout/${layoutName}.xml")
     )
     // 保存viewmodel
     save(
-        mviActivityViewModel(packageName, activityClass, layoutName), srcOut.resolve(
+            mviActivityViewModel(packageName, activityClass, layoutName), srcOut.resolve(
             "${
-                PathConst.transferPagePackage(
-                    layoutName.replace(
-                        "activity_", ""
-                    )
-                )
+                activityClass.decapitalize()
+//                PathConst.transferPagePackage(
+//                    layoutName.replace(
+//                        "activity_", ""
+//                    )
+//                )
             }/${activityClass}ViewModel.${ktOrJavaExt}"
-        )
+    )
     )
 }

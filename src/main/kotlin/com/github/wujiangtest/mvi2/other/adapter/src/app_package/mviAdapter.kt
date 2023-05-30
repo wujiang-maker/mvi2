@@ -1,5 +1,6 @@
 package com.github.wujiangtest.mvi2.other.adapter.src.app_package
 
+import com.github.wujiangtest.mvi2.other.PathConst
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -21,7 +22,7 @@ import ${applicationPackage}.databinding.Item${activityClass}Binding
 
 /**
  *@description $contentDescribe
- *@author 吴江
+ *@author ${PathConst.PluginUserName}
  *@data ${SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(Date())}
  */
 class ${activityClass}Adapter:BaseQuickAdapter<${entityClass},BaseDataBindingHolder<Item${activityClass}Binding>>(R.layout.${layoutName}) {

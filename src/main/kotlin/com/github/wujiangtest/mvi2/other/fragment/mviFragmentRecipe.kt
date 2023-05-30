@@ -24,11 +24,12 @@ fun RecipeExecutor.mviFragmentRecipe(
         mvvmFragment,
         srcOut.resolve(
             "${
-                PathConst.transferPagePackage(
-                    layoutName.replace(
-                        "fragment_", ""
-                    )
-                )
+                fragmentClass.decapitalize()
+//                PathConst.transferPagePackage(
+//                    layoutName.replace(
+//                        "fragment_", ""
+//                    )
+//                )
             }/${fragmentClass}Fragment.${ktOrJavaExt}"
         )
     )
@@ -41,11 +42,12 @@ fun RecipeExecutor.mviFragmentRecipe(
     save(
         mviViewModel(packageName, fragmentClass, layoutName), srcOut.resolve(
             "${
-                PathConst.transferPagePackage(
-                    layoutName.replace(
-                        "fragment_", ""
-                    )
-                )
+                fragmentClass.decapitalize()
+//                PathConst.transferPagePackage(
+//                    layoutName.replace(
+//                        "fragment_", ""
+//                    )
+//                )
             }/${fragmentClass}ViewModel.${ktOrJavaExt}"
         )
     )
