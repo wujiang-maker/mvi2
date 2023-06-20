@@ -4,10 +4,13 @@ import org.gradle.internal.impldep.com.google.common.base.CaseFormat
 import java.io.File
 
 object PathConst {
-    const val BaseVmActivityPath = "com.hideout.lib_base.common.mvi.base.BaseVmActivity"
-    const val BaseVmFragmentPath = "com.hideout.lib_base.common.mvi.base.BaseVmFragment"
-    const val BaseViewModelPath = "com.hideout.lib_base.common.mvi.base.BaseViewModel"
-    const val PluginUserName = "aaa@itmsoft.com"//插件使用者
+//    const val BaseVmActivityPath = "com.hideout.lib_base.common.mvi.base.BaseVmActivity"
+    const val BaseVmActivityPath = "com.yjkj.chainup.newVersion.base.BaseVmActivity"
+//    const val BaseVmFragmentPath = "com.hideout.lib_base.common.mvi.base.BaseVmFragment"
+    const val BaseVmFragmentPath = "com.yjkj.chainup.newVersion.base.BaseVmFragment"
+//    const val BaseViewModelPath = "com.hideout.lib_base.common.mvi.base.BaseViewModel"
+    const val BaseViewModelPath = "com.yjkj.vm.viewModel.BaseViewModel"
+    const val PluginUserName = "GjrU7@bitunix.io"//插件使用者
 
     /**
      * 下划线转驼峰
