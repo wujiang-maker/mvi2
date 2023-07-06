@@ -1,11 +1,11 @@
-package com.github.wujiangtest.mvi2.other.adapter
+package com.github.wujiangtest.mvi2.other.adapter2
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
 
-val mviAdapterTemplate
+val mviAdapter2Template
     get() = template {
-        name = "Mvi Adapter"
+        name = "Mvi Adapter2"
         description = "适用于Mvi框架的Adapter"
         minApi = MIN_API
         category = Category.Other
@@ -20,7 +20,7 @@ val mviAdapterTemplate
         lateinit var layoutName: StringParameter
         val adapterClass = stringParameter {
             name = "AdapterItem Name"
-            default = "Item"
+            default = ""
             help = "请输入Adapter名称"
             constraints = listOf(Constraint.NONEMPTY)
         }
@@ -47,10 +47,10 @@ val mviAdapterTemplate
 
         layoutName = stringParameter {
             name = "Layout Name"
-            default = "item_"
+            default = ""
             help = "请输入item布局的名字"
             constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
-            suggest = { "${activityToLayout(adapterClass.value).replace("activity", "item")}" }
+            suggest = { "item_${activityToLayout(adapterClass.value).replace("activity_", "")}" }
         }
         val packageName = defaultPackageNameParameter
         widgets(
@@ -62,9 +62,9 @@ val mviAdapterTemplate
             PackageNameWidget(packageName)
         )
         recipe = { data: TemplateData ->
-        mviAdapterRecipe(
+            mviAdapterRecipe(
                 data as ModuleTemplateData,
-                adapterClass.value,
+                "Item".plus(adapterClass.value),
                 adapterDescribe.value,
                 entityClass.value,
                 entityDescribe.value,

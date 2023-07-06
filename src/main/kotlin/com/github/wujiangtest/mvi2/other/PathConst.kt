@@ -10,7 +10,7 @@ object PathConst {
     const val BaseVmFragmentPath = "com.yjkj.chainup.newVersion.base.BaseVmFragment"
 //    const val BaseViewModelPath = "com.hideout.lib_base.common.mvi.base.BaseViewModel"
     const val BaseViewModelPath = "com.yjkj.vm.viewModel.BaseViewModel"
-    const val PluginUserName = "GjrU7@bitunix.io"//插件使用者
+    const val PluginUserName = "jasen-Android"//插件使用者
 
     /**
      * 下划线转驼峰

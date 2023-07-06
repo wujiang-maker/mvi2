@@ -1,4 +1,4 @@
-package com.github.wujiangtest.mvi2.other.adapter
+package com.github.wujiangtest.mvi2.other.adapter2
 
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
