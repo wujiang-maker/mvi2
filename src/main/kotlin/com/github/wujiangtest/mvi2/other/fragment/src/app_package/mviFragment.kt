@@ -33,7 +33,7 @@ class ${fragmentClass}Fragment:BaseVmFragment<${fragmentClass}ViewModel,Fragment
      * 初始化view
      */
     override fun initWidget(savedInstanceState: Bundle?) {
-        mDataBinding.vm = mViewModel
+        mViewBinding.vm = mViewModal
         
     }
 

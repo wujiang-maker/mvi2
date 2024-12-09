@@ -27,9 +27,17 @@ fun mviActivityXml(
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+         android:fitsSystemWindows="true">
 
-
+  <com.yjkj.chainup.newVersion.widget.MyTitleView
+            android:id="@+id/mtv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleText="" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
