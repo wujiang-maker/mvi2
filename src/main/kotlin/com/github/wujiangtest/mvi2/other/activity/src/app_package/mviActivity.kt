@@ -29,7 +29,10 @@ import ${applicationPackage}.databinding.Activity${activityClass}Binding
  */
  
 class ${activityClass}Activity:BaseVmActivity<${activityClass}ViewModel,Activity${activityClass}Binding>(R.layout.${layoutName}) {
-
+    
+    private val proxy:ClickProxy by lazy{
+        ClickProxy()
+    }
 
     /**
      *添加vm观察者
@@ -43,6 +46,7 @@ class ${activityClass}Activity:BaseVmActivity<${activityClass}ViewModel,Activity
      */
       override fun initWidget(savedInstanceState: Bundle?) {
         mDataBinding.vm = mViewModel
+        mDataBinding.click = proxy
 
     }
 
@@ -58,6 +62,13 @@ class ${activityClass}Activity:BaseVmActivity<${activityClass}ViewModel,Activity
      */
     sealed class ${activityClass}Action {
     
+    }
+    
+     /**
+     * 点击事件代理
+     */
+    inner class ClickProxy{
+
     }
 }
 """

@@ -29,11 +29,16 @@ import  ${applicationPackage}.databinding.Fragment${fragmentClass}Binding
  */
 class ${fragmentClass}Fragment:BaseVmFragment<${fragmentClass}ViewModel,Fragment${fragmentClass}Binding>(R.layout.${layoutName}) {
 
+    private val proxy: ClickProxy by lazy {
+        ClickProxy()
+    }
+
     /**
      * 初始化view
      */
     override fun initWidget(savedInstanceState: Bundle?) {
         mViewBinding.vm = mViewModal
+        mViewBinding.click = proxy
         
     }
 
@@ -63,6 +68,13 @@ class ${fragmentClass}Fragment:BaseVmFragment<${fragmentClass}ViewModel,Fragment
      */
     sealed class ${fragmentClass}Action {
     
+    }
+    
+    /**
+     * 点击事件代理
+     */
+    inner class ClickProxy{
+
     }
 }    
 """

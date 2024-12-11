@@ -15,15 +15,12 @@ fun mviActivityXml(
     <data>
         <variable
             name="vm"
-            type="${packageName}.${
-    activityClass.decapitalize()
-//    PathConst.transferPagePackage(
-        
-//    layoutName.replace(
-//        "activity_", ""
-//    )
-//)
-            }.${activityClass}ViewModel" />
+            type="${packageName}.${activityClass.decapitalize()}.${activityClass}ViewModel" />
+            
+          <variable
+            name="click"
+            type="${packageName}.${activityClass.decapitalize()}.${activityClass}Activity.ClickProxy" />    
+            
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

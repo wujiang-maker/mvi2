@@ -12,14 +12,11 @@ fun mviFragmentXml(
     <data>
         <variable
             name="vm"
-            type="${packageName}.${
-    fragmentClass.decapitalize()
-//    PathConst.transferPagePackage(
-//        layoutName.replace(
-//            "fragment_", ""
-//        )
-//    )
-}.${fragmentClass}ViewModel" />
+            type="${packageName}.${fragmentClass.decapitalize()}.${fragmentClass}ViewModel" />
+            
+           <variable
+            name="click"
+            type="${packageName}.${fragmentClass.decapitalize()}.${fragmentClass}Fragment.ClickProxy" />        
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
